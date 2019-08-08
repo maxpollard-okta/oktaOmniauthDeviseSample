@@ -50,3 +50,4 @@ in the cmd line: rails s
 If you have any odd SSL error from Devise when using Custom url with Okta make sure your cert is legitimate. By default line 3 (congig/initializers.rb with OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development?) is uncommented for POC purposes if your cert associated with your custom domain has issues, but this is strictly for dev purposes.
 
 
+# OktaOmniDeviseRailsSample
