@@ -1,12 +1,25 @@
 <div class="ui inverted segment">
-  <h1>Signed-In/Created Users created from Okta, Omniauth, and ActiveRecord</h1>
   <div class="ui inverted relaxed divided list">
 
 
     <div class="item">
       <div class="content">
-        <h2> <%= @user.name %> </h2>
+        <h2> Hi, <%= @user.name %>, welcome to your profile page </h2>
 
+          <h4> Your Apps: <h4>
+          <% @apps.each do |element| %>
+            <% element.linkUrl = element.linkUrl.gsub("1080ai.okta", "www.maxmarkley") %>
+            <%= link_to image_tag(element.logoUrl), element.linkUrl %>
+          <%end%>
+
+          <br><br>
+
+          <h4> <b> Your Roles: </b>
+
+          <% @roles.each do |element| %>
+            <%= element.label %>  
+          <%end%>
+          </h4>
          <h3> access_token:</h3>
 
           <% JSON.parse(@user.token).each do |token_field| %>

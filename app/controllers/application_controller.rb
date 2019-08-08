@@ -7,4 +7,14 @@ class ApplicationController < ActionController::Base
       redirect_to "/login"
     end
   end
+
+
+
+  def user_is_logged_in?
+    if !!session[:oktastate]
+    	@current_user_email = session[:oktastate][:info][:email]
+    else
+      redirect_to "/login"
+    end
+  end
 end

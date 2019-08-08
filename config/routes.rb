@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   # get 'sessions/failure'
   #
   get   '/login', :to => 'sessions#new', :as => :login
+  get   '/unauthorized', :to => 'sessions#failure'
   get '/logout', :to => 'sessions#destroy'
 
 
